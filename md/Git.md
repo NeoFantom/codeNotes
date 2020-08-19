@@ -12,7 +12,9 @@
 
 # Rewriting History
 
-1. `git commit --amend [-m "message"]`
+1. `git commit --amend`
+   1. `[-m "message"]` With message given in "".
+   2. `[--no-edit]` Without editing message.
 2. `git rebase`
 3. `git rebase i`
 4. `git reflog`
