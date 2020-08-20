@@ -31,7 +31,7 @@
 4. `git pull <remote>` Pull into current branch.
    1. `--rebase` Instead of merge, do a rebase.
    2. `git config --global branch.autosetuprebase always`
-   3. 
+   3. :::::::::
 
 # Branching
 
