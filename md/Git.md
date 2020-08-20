@@ -42,4 +42,3 @@
    4. `-r` Act (or list) remote branches.
    5. `-a` List all branches, both local and remote.
 2. `gti checkout <branch>` Switch to branch.
-3. yes gogo
