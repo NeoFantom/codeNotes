@@ -41,5 +41,9 @@
    3. `[-D <branch>]` Force delete the branch regardless of unmerged changes.
    4. `-r` Act (or list) remote branches.
    5. `-a` List all branches, both local and remote.
+<<<<<<< HEAD
 2. `gti checkout <branch>` Switch to branch.
 3. yes
+=======
+2. `gti checkout <branch>` Switch to branch. haha
+>>>>>>> crazy
