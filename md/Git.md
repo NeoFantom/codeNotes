@@ -4,6 +4,7 @@
 
 - [Setting up](#setting-up)
 - [Saving changes](#saving-changes)
+- [Inspecting a repository](#inspecting-a-repository)
 - [Undoing Changes](#undoing-changes)
 - [Rewriting History](#rewriting-history)
 - [Syncing](#syncing)
@@ -33,13 +34,21 @@
    - `git add [<file>|<directory]` Stage specified *file* or *directory*.
    - `git add (-A | --all)` Stage *all* changes of both tracked and untracked files.
 1. `git commit [-m "message"]` *See also [amended commit](#undoing-changes)*.
-1. `git diff [<file>]` See changes since last commit.
+1. `git diff [<file>]` Compare changes since last commit.
    - `git diff <commit1> <commit2>` Compare two commits.
+   - `git diff --cached` Compare changes between *staging area* and *HEAD*.
 1. `git stash` Stash uncommited changes of *tracked files* temporarily away.
    - `git stash apply` Apply stashed changes.
    - `git stash pop` Apply, then remove.
    - `git stash (-u | --include-untracked)` Stash *untracked* files.
    - `git stash (-a | --all)` Stash all, including *untracked, ignored*.
+
+## Inspecting a repository
+
+1. `git status`
+1. `git log` See commit history.
+   1. `[--oneline]` Print each commit in one line.
+1. `git blame <file>` Print the file with author attached to each line.
 
 ## Undoing Changes
 
