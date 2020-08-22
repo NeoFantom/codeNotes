@@ -57,7 +57,9 @@
    - `git checkout -b <commit id>` Checkout to a previous commit and create a new branch.
    - `git checkout <branch>` Checkout to the latest commit of the branch.
    - `git checkout master` An example. Checkout to the latest commit in master branch.
-1. `git clean` Clean uncommitted changes.
+1. `git clean` Clean uncommitted changes. *Must be used with parameter*.
+   1. `git clean -i` Interactive.
+   1. `git clean -f` Forced clean.
 1. `git revert` Do a new commit that reverts the last commit. *Best for public changes.*
 1. `git reset --hard <commit id>` Roll back to the previous commit and withdraw the commits after it. *Best for local changes.*
 1. `git commit --amend` Withdraw the last commit and commit again with the latest changes.
