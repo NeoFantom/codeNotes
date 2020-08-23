@@ -9,6 +9,7 @@
 - [Syncing](#syncing)
 - [Branching](#branching)
 - [Merging](#merging)
+- [Best practices](#best-practices)
 
 ## Setting up
 
@@ -54,10 +55,12 @@
    - `git stash (-a | --all)` Stash all, including *untracked, ignored*.
 1. `git revert` Do a new commit that reverts the last commit. *Requires working tree to be clean.* *Best for public changes.*
    - `git revert HEAD` Revert last commit.
-1. `git reset [options=--mixed] <commit id>` Roll back to the previous commit and withdraw the commits after it. *Best for local changes.*
-   - `--soft` Reset only HEAD.
-   - `--mixed` Reset HEAD and index, move staged changes into working tree.
-   - `--hard` Reset HEAD, index and working tree. All uncommitted changes are lost.
+1. `git reset` Various usages.
+   - `git reset` (No arguments.) Clear index tree.
+   - `git reset [<options> = --mixed] <commit id>` Roll back to the previous commit and withdraw the commits after it. *Best for local changes.*
+      - `--soft` Reset only HEAD.
+      - `--mixed` Reset HEAD and index, move staged changes into working tree.
+      - `--hard` Reset HEAD, index and working tree. All uncommitted changes are lost.
 1. `git clean` Clean untracked files. *Must be used with parameter*.
    - `git clean -i` Interactive.
    - `git clean -f` Forced clean.
@@ -103,3 +106,14 @@
 1. `git merge <branch>` Merge branch into current branch.
    - If it is a fast-forward merge, then simply merge it.
    - Else, if the two branches made changes somewhere in the *same place of the same file,* then conflicts are printed in the conflicted file, and the user has to manually resolve it.
+
+## Best practices
+
+1. Squash multiple commits.
+   1. `git stash` Ensure changes are not lost, clean working tree.
+   1. `git rebase -i <commit-before-squashed>` The given commit is the one before those need to be squashed.
+   1. Change "pick" to s to squash a commit into previous one.
+   1. Edit the new commit message.
+   1. Push to remote if necessary.
+1. Pull and cover local changes.
+   1. `git stash` or `git reset HEAD
