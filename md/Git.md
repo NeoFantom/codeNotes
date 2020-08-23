@@ -47,7 +47,9 @@
    - `git rm <file1> <file2> ...` Remove multiple files.
    - `git rm <glob1> <glob2> ...` Remove multiple items by globs.
 1. `git commit [-m "message"]`
-   - `git commit --amend` Withdraw the last commit and commit again with the latest changes.
+   - `git commit --amend` *Best for local changes.*
+     - `[-m "message"]` With message given in "".
+     - `[--no-edit]` Without editing message, update the s.
 1. `git stash` Stash uncommitted changes of *tracked files* temporarily away.
    - `git stash apply` Apply stashed changes.
    - `git stash pop` Apply, then remove.
@@ -55,12 +57,12 @@
    - `git stash (-a | --all)` Stash all, including *untracked, ignored*.
 1. `git revert` Do a new commit that reverts the last commit. *Requires working tree to be clean.* *Best for public changes.*
    - `git revert HEAD` Revert last commit.
-1. `git reset` Various usages.
-   - `git reset` (No arguments.) Clear index tree.
-   - `git reset [<options> = --mixed] <commit id>` Roll back to the previous commit and withdraw the commits after it. *Best for local changes.*
-      - `--soft` Reset only HEAD.
-      - `--mixed` Reset HEAD and index, move staged changes into working tree.
-      - `--hard` Reset HEAD, index and working tree. All uncommitted changes are lost.
+   - `git revert <commit>` Do a new commit to revert given commit.
+     - `[-n | --no-commit]` Prepare and add the reverse changes, not commiting.
+1. `git reset [<options> = --mixed] [<commit-id> = HEAD]` Roll back to the previous commit and withdraw the commits after it. *Best for local changes.*
+   - `--soft` Reset only HEAD.
+   - `--mixed` Reset HEAD and index, move staged changes into working tree.
+   - `--hard` Reset HEAD, index and working tree. All uncommitted changes are lost.
 1. `git clean` Clean untracked files. *Must be used with parameter*.
    - `git clean -i` Interactive.
    - `git clean -f` Forced clean.
@@ -116,4 +118,5 @@
    1. Edit the new commit message.
    1. Push to remote if necessary.
 1. Pull and cover local changes.
-   1. `git stash` or `git reset HEAD
+   1. `git reset --hard` Clear local changes.
+   1. `git pull`
