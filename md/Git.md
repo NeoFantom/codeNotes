@@ -44,8 +44,9 @@
    - `git add [<file>|<directory]` Stage specified *file* or *directory*.
    - `git add (-A | --all)` Stage *all* changes of both tracked and untracked files.
 1. `git rm` Reverse of *add*.
-   - `git rm <file1> <file2> ...` Remove multiple files.
-   - `git rm <glob1> <glob2> ...` Remove multiple items by globs.
+   - `git rm <file1> <file2> ...` Remove multiple files in index and working tree.
+   - `git rm <glob1> <glob2> ...` Remove multiple items by globs in index and working tree.
+   - `[--cached]` Only remove in index tree, leaving working tree untouched.
 1. `git commit [-m "message"]`
    - `git commit --amend` *Best for local changes.*
      - `[-m "message"]` With message given in "".
