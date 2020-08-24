@@ -121,3 +121,5 @@
 1. Pull and cover local changes.
    1. `git reset --hard` Clear local changes.
    1. `git pull`
+1. Make local branch track remote branch.
+   1. `git branch -u <remote-branch>` E.g. *remote-branch* can be *origin/master*.
