@@ -3,7 +3,7 @@
 int *array = malloc((sizeof(int) * len));
 int *array = calloc(len, sizeof(int));
 ```
-!@#$%^&*()_+
+
 # C user-defined type
 
 ```C
