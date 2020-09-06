@@ -9,6 +9,7 @@
 - [Syncing](#syncing)
 - [Branching](#branching)
 - [Merging](#merging)
+  - [Merge Conflict types](#merge-conflict-types)
 - [Best practices](#best-practices)
 
 ## Setting up
@@ -109,6 +110,11 @@
 1. `git merge <branch>` Merge branch into current branch.
    - If it is a fast-forward merge, then simply merge it.
    - Else, if the two branches made changes somewhere in the *same place of the same file,* then conflicts are printed in the conflicted file, and the user has to manually resolve it.
+
+### Merge Conflict types
+
+- Fails to start. Working tree or staging area not clean.
+- Fails during merge. Two branches have conflicts.
 
 ## Best practices
 
