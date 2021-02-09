@@ -11,6 +11,7 @@
 - [Merging](#merging)
   - [Merge Conflict types](#merge-conflict-types)
 - [Best practices](#best-practices)
+- [Configuration](#configuration)
 
 ## Setting up
 
@@ -87,13 +88,14 @@
 1. `git fetch <remote> [<branch>]`
 1. `git push <remote> <branch>` Push branch to remote if all merges are fast-forward.
    - `[--force]` *Use when re-pushing an amended commit.*
+   - When push to a remote non-master branch, create a local branch with the same name, then push to origin.
 1. `git pull <remote>` Pull into current branch. Effectively equivalent to `git fetch` followed by `git merge`.
    - `--rebase` Instead of merge, do a rebase.
    - `git config --global branch.autosetuprebase always`
 
 ## Branching
 
-1. `git branch` List branches.
+1. `git branch` List local branches.
    - `[<branch_name>]` Create branch with specified name, no switching.
    - `[-d <branch>]` Delete the branch, or do nothing if the branch has unmerged changes.
    - `[-D <branch>]` Force delete the branch regardless of unmerged changes.
@@ -129,3 +131,9 @@
    1. `git pull`
 1. Make local branch track remote branch.
    1. `git branch -u <remote-branch>` E.g. *remote-branch* can be *origin/master*.
+
+## Configuration
+
+1. `git config (--global | --system | --local)` Defaults to local.
+   1. `-e` Open the config file and edit it directly. Saving and closing would confirm the modification.
+   1. `alias.<alias command> "<real command>"` Alias a command or a command sequence. E.g. `git config alias.lg "log --oneline"`
